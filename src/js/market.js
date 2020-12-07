@@ -1,24 +1,12 @@
 import "../css/market.css";
 
+//Импорт шаблона и данных для разметки меню
 import menuTemplate from "../templates/market.hbs";
 import menu from "../data/menu.json";
-
-const Theme = {
-  LIGHT: 'light-theme',
-  DARK: 'dark-theme',
-};
 
 //Список с элементами меню
 const menuListRef = document.querySelector('.js-menu');
 
-//Кнопка переключения темы
-const checkBoxRef = document.getElementById('theme-switch-toggle');
-
-//body для добавления классов
-const bodyRef = document.querySelector('body');
-
-//Получаем разметку из шаблонизатора
+//Получаем разметку из шаблонизатора и добавляем в DOM
 const menuMarkup = menuTemplate(menu);
-
-//Добавляем разметку в DOM
 menuListRef.insertAdjacentHTML('beforeend', menuMarkup);
